@@ -31,10 +31,10 @@
   (every? #(contains? (:awards book) %) awards))
 
 (defn my-some [pred a-seq]
-  :-)
+  (first (filter boolean (map pred a-seq))))
 
 (defn my-every? [pred a-seq]
-  :-)
+  (empty? (filter boolean (map (complement pred) a-seq))))
 
 (defn prime? [n]
   :-)
